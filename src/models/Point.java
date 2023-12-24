@@ -13,21 +13,21 @@ public class Point {
     private double distance;
 
     public Point(double x, double y) {
-        this.prevX = this.newX;
-        this.prevY = this.newY;
-        this.newX = x;
-        this.newY = y;
+        this.prevX = newX;
+        this.prevY = newY;
+        newX = x;
+        newY = y;
     }
 
 
     public double getDistance(double x, double y){
         if (isFirstRequest){
             this.distance = 0;
-            this.isFirstRequest = false;
+            isFirstRequest = false;
         }
         else {
-            this.newX = x;
-            this.newY = y;
+            newX = x;
+            newY = y;
 
 
             this.distance = Math.sqrt((newX - prevX) * (newX - prevX) + (newY - prevY) * (newY - prevY));
